@@ -20,13 +20,18 @@ public class GreetingController {
     }
 
     @GetMapping("/greetings")
-
     public Greetings receiveArrayOfValues(@RequestParam String[] values)
     {
         return new Greetings(counter.incrementAndGet(), new String ("abc"), values);
     }
-    @GetMapping("/greetinglist")
+    @GetMapping("/greetingArray")
     public Greetings testArrayOfValues(@RequestParam List<String> values)
+    {
+        return new Greetings(counter.incrementAndGet(), new String ("abc"), values);
+    }
+
+    @GetMapping("/greetinglist")
+    public Greetings testArrayOfValuestoList(@RequestParam List<String> values)
     {
         return new Greetings(counter.incrementAndGet(), new String ("abc"), values);
     }
